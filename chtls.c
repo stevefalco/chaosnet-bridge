@@ -1436,7 +1436,7 @@ forward_on_tls(struct chroute *rt, u_short schad, u_short dchad, struct chaos_he
 	 (rt->rt_braddr == 0 && (tlsdest[i].tls_addr == rt->rt_dest))
 	 ||
 	 // multiplexed
-	 is_in_mux_list(dchad, &tlsdest[i].tls_muxed)
+	 is_in_mux_list(dchad, tlsdest[i].tls_muxed)
 	 )) {
       if (verbose || debug) fprintf(stderr,"Forward TLS to dest %#o over %#o (%s)\n", dchad, tlsdest[i].tls_addr, tlsdest[i].tls_name);
       td = &tlsdest[i];
